@@ -1,0 +1,413 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resources - InfiniteSecurity</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0A101E;
+      color: #E0E0E0;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #00C9FF, #92FE9D);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .glass-card {
+      background: rgba(20, 28, 48, 0.6);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .hover-lift {
+      transition: all 0.3s ease;
+    }
+
+    .hover-lift:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .pulse-glow {
+      animation: pulse-glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes pulse-glow {
+      from { box-shadow: 0 0 20px rgba(0, 201, 255, 0.3); }
+      to { box-shadow: 0 0 30px rgba(0, 201, 255, 0.6); }
+    }
+
+    .cyber-grid {
+      background-image: 
+        linear-gradient(rgba(0, 201, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 201, 255, 0.03) 1px, transparent 1px);
+      background-size: 50px 50px;
+      animation: grid-move 20s linear infinite;
+    }
+
+    @keyframes grid-move {
+      0% { background-position: 0 0; }
+      100% { background-position: 50px 50px; }
+    }
+  </style>
+</head>
+
+<body class="antialiased cyber-grid">
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-gray-800">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex-shrink-0">
+          <a href="index.html" class="text-2xl font-bold gradient-text flex items-center gap-2">
+            <div class="w-8 h-8 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center pulse-glow">
+              <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            InfiniteSecurity
+          </a>
+        </div>
+
+        <nav class="hidden md:flex md:space-x-8">
+          <a href="courses.html" class="text-gray-300 hover:text-white transition-colors">Courses</a>
+          <a href="resources.html" class="text-white font-semibold">Resources</a>
+          <a href="about.html" class="text-gray-300 hover:text-white transition-colors">About Us</a>
+          <a href="blog.html" class="text-gray-300 hover:text-white transition-colors">Blog</a>
+          <a href="contact.html" class="text-gray-300 hover:text-white transition-colors">Contact</a>
+        </nav>
+
+        <div class="hidden md:flex items-center space-x-4">
+          <a href="#" onclick="openLoginModal()" class="text-gray-300 hover:text-white transition-colors">Log In</a>
+          <a href="#" onclick="openSignupModal()" class="bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold py-2 px-6 rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300">
+            Sign Up
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-20">
+    <!-- Hero Section -->
+    <section class="py-20 bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6">
+          Cybersecurity <span class="gradient-text">Resources</span>
+        </h1>
+        <p class="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+          Essential tools, frameworks, and resources for cybersecurity professionals and enthusiasts.
+        </p>
+      </div>
+    </section>
+
+    <!-- Security Tools Section -->
+    <section class="py-20">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-white">Security Tools</h2>
+          <p class="mt-4 text-lg text-gray-400">Professional-grade tools for penetration testing and security analysis</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Tool 1 -->
+          <div class="glass-card p-6 rounded-lg hover-lift">
+            <div class="flex items-center mb-4">
+              <img src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=64&h=64&fit=crop" alt="Kali Linux" class="w-12 h-12 rounded-lg mr-4">
+              <div>
+                <h3 class="text-xl font-bold text-white">Kali Linux</h3>
+                <p class="text-cyan-400 text-sm">Penetration Testing OS</p>
+              </div>
+            </div>
+            <p class="text-gray-400 mb-4">Advanced penetration testing platform with 600+ pre-installed tools.</p>
+            <div class="flex justify-between items-center">
+              <span class="text-green-400 font-semibold">Free</span>
+              <a href="https://www.kali.org/" target="_blank" class="text-cyan-400 hover:text-cyan-300 font-semibold">Download →</a>
+            </div>
+          </div>
+
+          <!-- Tool 2 -->
+          <div class="glass-card p-6 rounded-lg hover-lift">
+            <div class="flex items-center mb-4">
+              <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=64&h=64&fit=crop" alt="Metasploit" class="w-12 h-12 rounded-lg mr-4">
+              <div>
+                <h3 class="text-xl font-bold text-white">Metasploit</h3>
+                <p class="text-cyan-400 text-sm">Exploitation Framework</p>
+              </div>
+            </div>
+            <p class="text-gray-400 mb-4">World's most used penetration testing framework for finding vulnerabilities.</p>
+            <div class="flex justify-between items-center">
+              <span class="text-green-400 font-semibold">Free/Pro</span>
+              <a href="https://www.metasploit.com/" target="_blank" class="text-cyan-400 hover:text-cyan-300 font-semibold">Learn More →</a>
+            </div>
+          </div>
+
+          <!-- Tool 3 -->
+          <div class="glass-card p-6 rounded-lg hover-lift">
+            <div class="flex items-center mb-4">
+              <img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=64&h=64&fit=crop" alt="Wireshark" class="w-12 h-12 rounded-lg mr-4">
+              <div>
+                <h3 class="text-xl font-bold text-white">Wireshark</h3>
+                <p class="text-cyan-400 text-sm">Network Analyzer</p>
+              </div>
+            </div>
+            <p class="text-gray-400 mb-4">Network protocol analyzer for troubleshooting and analysis.</p>
+            <div class="flex justify-between items-center">
+              <span class="text-green-400 font-semibold">Free</span>
+              <a href="https://www.wireshark.org/" target="_blank" class="text-cyan-400 hover:text-cyan-300 font-semibold">Download →</a>
+            </div>
+          </div>
+
+          <!-- Tool 4 -->
+          <div class="glass-card p-6 rounded-lg hover-lift">
+            <div class="flex items-center mb-4">
+              <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=64&h=64&fit=crop" alt="Nmap" class="w-12 h-12 rounded-lg mr-4">
+              <div>
+                <h3 class="text-xl font-bold text-white">Nmap</h3>
+                <p class="text-cyan-400 text-sm">Network Scanner</p>
+              </div>
+            </div>
+            <p class="text-gray-400 mb-4">Network discovery and security auditing tool.</p>
+            <div class="flex justify-between items-center">
+              <span class="text-green-400 font-semibold">Free</span>
+              <a href="https://nmap.org/" target="_blank" class="text-cyan-400 hover:text-cyan-300 font-semibold">Download →</a>
+            </div>
+          </div>
+
+          <!-- Tool 5 -->
+          <div class="glass-card p-6 rounded-lg hover-lift">
+            <div class="flex items-center mb-4">
+              <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=64&h=64&fit=crop" alt="Burp Suite" class="w-12 h-12 rounded-lg mr-4">
+              <div>
+                <h3 class="text-xl font-bold text-white">Burp Suite</h3>
+                <p class="text-cyan-400 text-sm">Web App Security</p>
+              </div>
+            </div>
+            <p class="text-gray-400 mb-4">Integrated platform for performing security testing of web applications.</p>
+            <div class="flex justify-between items-center">
+              <span class="text-green-400 font-semibold">Free/Pro</span>
+              <a href="https://portswigger.net/burp" target="_blank" class="text-cyan-400 hover:text-cyan-300 font-semibold">Learn More →</a>
+            </div>
+          </div>
+
+          <!-- Tool 6 -->
+          <div class="glass-card p-6 rounded-lg hover-lift">
+            <div class="flex items-center mb-4">
+              <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=64&h=64&fit=crop" alt="OWASP ZAP" class="w-12 h-12 rounded-lg mr-4">
+              <div>
+                <h3 class="text-xl font-bold text-white">OWASP ZAP</h3>
+                <p class="text-cyan-400 text-sm">Security Scanner</p>
+              </div>
+            </div>
+            <p class="text-gray-400 mb-4">Free security tool for finding vulnerabilities in web applications.</p>
+            <div class="flex justify-between items-center">
+              <span class="text-green-400 font-semibold">Free</span>
+              <a href="https://owasp.org/www-project-zap/" target="_blank" class="text-cyan-400 hover:text-cyan-300 font-semibold">Download →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Frameworks & Standards -->
+    <section class="py-20 bg-gray-900 bg-opacity-40">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-white">Frameworks & Standards</h2>
+          <p class="mt-4 text-lg text-gray-400">Industry-standard frameworks for cybersecurity management</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="glass-card p-6 rounded-lg text-center hover-lift">
+            <div class="w-16 h-16 bg-cyan-500/20 rounded-lg flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">NIST Framework</h3>
+            <p class="text-gray-400 text-sm mb-4">Cybersecurity framework for critical infrastructure</p>
+            <a href="https://www.nist.gov/cyberframework" target="_blank" class="text-cyan-400 hover:text-cyan-300 text-sm font-semibold">Learn More →</a>
+          </div>
+
+          <div class="glass-card p-6 rounded-lg text-center hover-lift">
+            <div class="w-16 h-16 bg-green-500/20 rounded-lg flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">ISO 27001</h3>
+            <p class="text-gray-400 text-sm mb-4">Information security management systems standard</p>
+            <a href="https://www.iso.org/isoiec-27001-information-security.html" target="_blank" class="text-green-400 hover:text-green-300 text-sm font-semibold">Learn More →</a>
+          </div>
+
+          <div class="glass-card p-6 rounded-lg text-center hover-lift">
+            <div class="w-16 h-16 bg-purple-500/20 rounded-lg flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">OWASP Top 10</h3>
+            <p class="text-gray-400 text-sm mb-4">Top 10 web application security risks</p>
+            <a href="https://owasp.org/www-project-top-ten/" target="_blank" class="text-purple-400 hover:text-purple-300 text-sm font-semibold">Learn More →</a>
+          </div>
+
+          <div class="glass-card p-6 rounded-lg text-center hover-lift">
+            <div class="w-16 h-16 bg-yellow-500/20 rounded-lg flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">MITRE ATT&CK</h3>
+            <p class="text-gray-400 text-sm mb-4">Adversarial tactics and techniques framework</p>
+            <a href="https://attack.mitre.org/" target="_blank" class="text-yellow-400 hover:text-yellow-300 text-sm font-semibold">Learn More →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Learning Resources -->
+    <section class="py-20">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-white">Learning Resources</h2>
+          <p class="mt-4 text-lg text-gray-400">Expand your knowledge with these valuable resources</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="glass-card p-8 rounded-lg hover-lift">
+            <h3 class="text-2xl font-bold text-white mb-4">📚 Documentation & Guides</h3>
+            <ul class="space-y-3">
+              <li><a href="https://owasp.org/" target="_blank" class="text-cyan-400 hover:text-cyan-300 flex items-center gap-2">
+                OWASP Foundation <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              </a></li>
+              <li><a href="https://www.sans.org/reading-room/" target="_blank" class="text-cyan-400 hover:text-cyan-300 flex items-center gap-2">
+                SANS Reading Room <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              </a></li>
+              <li><a href="https://www.cisa.gov/cybersecurity" target="_blank" class="text-cyan-400 hover:text-cyan-300 flex items-center gap-2">
+                CISA Cybersecurity <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              </a></li>
+              <li><a href="https://www.ncsc.gov.uk/guidance" target="_blank" class="text-cyan-400 hover:text-cyan-300 flex items-center gap-2">
+                NCSC Guidance <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              </a></li>
+            </ul>
+          </div>
+
+          <div class="glass-card p-8 rounded-lg hover-lift">
+            <h3 class="text-2xl font-bold text-white mb-4">🎯 Practice Platforms</h3>
+            <ul class="space-y-3">
+              <li><a href="https://www.hackthebox.com/" target="_blank" class="text-green-400 hover:text-green-300 flex items-center gap-2">
+                Hack The Box <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              </a></li>
+              <li><a href="https://tryhackme.com/" target="_blank" class="text-green-400 hover:text-green-300 flex items-center gap-2">
+                TryHackMe <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              </a></li>
+              <li><a href="https://www.vulnhub.com/" target="_blank" class="text-green-400 hover:text-green-300 flex items-center gap-2">
+                VulnHub <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              </a></li>
+              <li><a href="https://overthewire.org/wargames/" target="_blank" class="text-green-400 hover:text-green-300 flex items-center gap-2">
+                OverTheWire <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              </a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Login Modal -->
+  <div id="loginModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+    <div class="glass-card p-8 rounded-lg w-full max-w-md mx-4">
+      <h2 class="text-2xl font-bold text-white mb-6 text-center">Login</h2>
+      <form id="loginForm">
+        <div class="mb-4">
+          <input type="email" placeholder="Email" class="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500" required>
+        </div>
+        <div class="mb-6">
+          <input type="password" placeholder="Password" class="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500" required>
+        </div>
+        <button type="submit" class="w-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold py-3 rounded-lg hover:scale-105 transition-transform duration-300">
+          Login
+        </button>
+      </form>
+      <button onclick="closeLoginModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Signup Modal -->
+  <div id="signupModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+    <div class="glass-card p-8 rounded-lg w-full max-w-md mx-4">
+      <h2 class="text-2xl font-bold text-white mb-6 text-center">Sign Up</h2>
+      <form id="signupForm">
+        <div class="mb-4">
+          <input type="text" placeholder="Full Name" class="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500" required>
+        </div>
+        <div class="mb-4">
+          <input type="email" placeholder="Email" class="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500" required>
+        </div>
+        <div class="mb-6">
+          <input type="password" placeholder="Password" class="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500" required>
+        </div>
+        <button type="submit" class="w-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold py-3 rounded-lg hover:scale-105 transition-transform duration-300">
+          Sign Up
+        </button>
+      </form>
+      <button onclick="closeSignupModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // Modal functions
+    function openLoginModal() {
+      document.getElementById('loginModal').classList.remove('hidden');
+    }
+
+    function closeLoginModal() {
+      document.getElementById('loginModal').classList.add('hidden');
+    }
+
+    function openSignupModal() {
+      document.getElementById('signupModal').classList.remove('hidden');
+    }
+
+    function closeSignupModal() {
+      document.getElementById('signupModal').classList.add('hidden');
+    }
+
+    // Form submissions
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Login successful! (This is a demo)');
+      closeLoginModal();
+    });
+
+    document.getElementById('signupForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Account created successfully! (This is a demo)');
+      closeSignupModal();
+    });
+  </script>
+</body>
+
+</html>

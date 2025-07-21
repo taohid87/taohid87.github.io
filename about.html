@@ -1,0 +1,403 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - InfiniteSecurity</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0A101E;
+      color: #E0E0E0;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #00C9FF, #92FE9D);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .glass-card {
+      background: rgba(20, 28, 48, 0.6);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .hover-lift {
+      transition: all 0.3s ease;
+    }
+
+    .hover-lift:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .pulse-glow {
+      animation: pulse-glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes pulse-glow {
+      from { box-shadow: 0 0 20px rgba(0, 201, 255, 0.3); }
+      to { box-shadow: 0 0 30px rgba(0, 201, 255, 0.6); }
+    }
+
+    .cyber-grid {
+      background-image: 
+        linear-gradient(rgba(0, 201, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 201, 255, 0.03) 1px, transparent 1px);
+      background-size: 50px 50px;
+      animation: grid-move 20s linear infinite;
+    }
+
+    @keyframes grid-move {
+      0% { background-position: 0 0; }
+      100% { background-position: 50px 50px; }
+    }
+  </style>
+</head>
+
+<body class="antialiased cyber-grid">
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-gray-800">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex-shrink-0">
+          <a href="index.html" class="text-2xl font-bold gradient-text flex items-center gap-2">
+            <div class="w-8 h-8 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center pulse-glow">
+              <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            InfiniteSecurity
+          </a>
+        </div>
+
+        <nav class="hidden md:flex md:space-x-8">
+          <a href="courses.html" class="text-gray-300 hover:text-white transition-colors">Courses</a>
+          <a href="resources.html" class="text-gray-300 hover:text-white transition-colors">Resources</a>
+          <a href="about.html" class="text-white font-semibold">About Us</a>
+          <a href="blog.html" class="text-gray-300 hover:text-white transition-colors">Blog</a>
+          <a href="contact.html" class="text-gray-300 hover:text-white transition-colors">Contact</a>
+        </nav>
+
+        <div class="hidden md:flex items-center space-x-4">
+          <a href="#" onclick="openLoginModal()" class="text-gray-300 hover:text-white transition-colors">Log In</a>
+          <a href="#" onclick="openSignupModal()" class="bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold py-2 px-6 rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300">
+            Sign Up
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-20">
+    <!-- Hero Section -->
+    <section class="py-20 bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6">
+          About <span class="gradient-text">InfiniteSecurity</span>
+        </h1>
+        <p class="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+          Leading the way in cybersecurity education and training, protecting the digital future one professional at a time.
+        </p>
+      </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="py-20">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Our Mission</h2>
+            <p class="text-lg text-gray-300 mb-6">
+              At InfiniteSecurity, we believe that cybersecurity is not just about technology—it's about empowering people with the knowledge and skills to protect what matters most. Our mission is to make cybersecurity education accessible, practical, and transformative.
+            </p>
+            <p class="text-lg text-gray-300 mb-8">
+              We're committed to bridging the cybersecurity skills gap by providing world-class training that prepares professionals for real-world challenges. From beginners taking their first steps into cybersecurity to seasoned professionals advancing their expertise, we're here to guide every journey.
+            </p>
+            <div class="grid grid-cols-2 gap-6">
+              <div class="glass-card p-4 rounded-lg text-center">
+                <div class="text-2xl font-bold gradient-text">50,000+</div>
+                <div class="text-sm text-gray-400">Students Trained</div>
+              </div>
+              <div class="glass-card p-4 rounded-lg text-center">
+                <div class="text-2xl font-bold gradient-text">95%</div>
+                <div class="text-sm text-gray-400">Success Rate</div>
+              </div>
+            </div>
+          </div>
+          <div class="glass-card p-8 rounded-lg">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop" alt="Team collaboration" class="w-full h-64 object-cover rounded-lg mb-6">
+            <h3 class="text-xl font-bold text-white mb-4">Why Choose InfiniteSecurity?</h3>
+            <ul class="space-y-2 text-gray-300">
+              <li class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                Industry-recognized certifications
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                Hands-on practical experience
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                Expert instructor support
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                Career placement assistance
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-20 bg-gray-900 bg-opacity-40">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-white">Meet Our Leadership Team</h2>
+          <p class="mt-4 text-lg text-gray-400">Experienced professionals leading the cybersecurity revolution</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Team Member 1 -->
+          <div class="glass-card p-8 rounded-lg text-center hover-lift">
+            <div class="relative inline-block mb-6">
+              <img class="h-32 w-32 rounded-full object-cover mx-auto border-4 border-cyan-500/30" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face" alt="John Doe">
+              <div class="absolute -bottom-2 -right-2 bg-green-500 w-8 h-8 rounded-full border-2 border-gray-900 flex items-center justify-center">
+                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">John Doe</h3>
+            <p class="text-cyan-400 font-semibold mb-4">CEO & Founder</p>
+            <p class="text-gray-300 mb-4">15+ years in cybersecurity leadership. Former CISO at Fortune 500 companies.</p>
+            <div class="flex justify-center space-x-4">
+              <a href="#" class="text-gray-400 hover:text-cyan-400">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.206v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.512-1.387 2.688 0 3.185 1.77 3.185 4.079v4.724zM6.935 7.563a1.548 1.548 0 11-3.098 0 1.548 1.548 0 013.098 0zM8.468 16.338H5.396v-8.59h3.072v8.59z" clip-rule="evenodd"></path>
+                </svg>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-cyan-400">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Team Member 2 -->
+          <div class="glass-card p-8 rounded-lg text-center hover-lift">
+            <div class="relative inline-block mb-6">
+              <img class="h-32 w-32 rounded-full object-cover mx-auto border-4 border-green-500/30" src="https://images.unsplash.com/photo-1494790108755-2616b612b47c?w=200&h=200&fit=crop&crop=face" alt="Jane Smith">
+              <div class="absolute -bottom-2 -right-2 bg-green-500 w-8 h-8 rounded-full border-2 border-gray-900 flex items-center justify-center">
+                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Jane Smith</h3>
+            <p class="text-green-400 font-semibold mb-4">CTO & Head of Education</p>
+            <p class="text-gray-300 mb-4">Expert in penetration testing and ethical hacking. Published security researcher.</p>
+            <div class="flex justify-center space-x-4">
+              <a href="#" class="text-gray-400 hover:text-green-400">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.206v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.512-1.387 2.688 0 3.185 1.77 3.185 4.079v4.724zM6.935 7.563a1.548 1.548 0 11-3.098 0 1.548 1.548 0 013.098 0zM8.468 16.338H5.396v-8.59h3.072v8.59z" clip-rule="evenodd"></path>
+                </svg>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-green-400">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Team Member 3 -->
+          <div class="glass-card p-8 rounded-lg text-center hover-lift">
+            <div class="relative inline-block mb-6">
+              <img class="h-32 w-32 rounded-full object-cover mx-auto border-4 border-purple-500/30" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face" alt="Alex Kwon">
+              <div class="absolute -bottom-2 -right-2 bg-green-500 w-8 h-8 rounded-full border-2 border-gray-900 flex items-center justify-center">
+                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Alex Kwon</h3>
+            <p class="text-purple-400 font-semibold mb-4">Head of Digital Forensics</p>
+            <p class="text-gray-300 mb-4">Digital forensics expert with 12+ years in cybercrime investigation and incident response.</p>
+            <div class="flex justify-center space-x-4">
+              <a href="#" class="text-gray-400 hover:text-purple-400">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.206v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.512-1.387 2.688 0 3.185 1.77 3.185 4.079v4.724zM6.935 7.563a1.548 1.548 0 11-3.098 0 1.548 1.548 0 013.098 0zM8.468 16.338H5.396v-8.59h3.072v8.59z" clip-rule="evenodd"></path>
+                </svg>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-purple-400">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="py-20">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-white">Our Core Values</h2>
+          <p class="mt-4 text-lg text-gray-400">The principles that guide everything we do</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="glass-card p-8 rounded-lg text-center hover-lift">
+            <div class="w-16 h-16 bg-cyan-500/20 rounded-lg flex items-center justify-center mx-auto mb-6">
+              <svg class="w-8 h-8 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-4">Security First</h3>
+            <p class="text-gray-400">We prioritize security in everything we do, from our platform to our teaching methods.</p>
+          </div>
+
+          <div class="glass-card p-8 rounded-lg text-center hover-lift">
+            <div class="w-16 h-16 bg-green-500/20 rounded-lg flex items-center justify-center mx-auto mb-6">
+              <svg class="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C20.168 18.477 18.582 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-4">Excellence</h3>
+            <p class="text-gray-400">We maintain the highest standards in our courses, instructors, and support services.</p>
+          </div>
+
+          <div class="glass-card p-8 rounded-lg text-center hover-lift">
+            <div class="w-16 h-16 bg-purple-500/20 rounded-lg flex items-center justify-center mx-auto mb-6">
+              <svg class="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-4">Community</h3>
+            <p class="text-gray-400">We build a supportive community where students and professionals can learn and grow together.</p>
+          </div>
+
+          <div class="glass-card p-8 rounded-lg text-center hover-lift">
+            <div class="w-16 h-16 bg-yellow-500/20 rounded-lg flex items-center justify-center mx-auto mb-6">
+              <svg class="w-8 h-8 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-4">Innovation</h3>
+            <p class="text-gray-400">We continuously evolve our methods and content to stay ahead of emerging threats.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Login Modal -->
+  <div id="loginModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+    <div class="glass-card p-8 rounded-lg w-full max-w-md mx-4">
+      <h2 class="text-2xl font-bold text-white mb-6 text-center">Login</h2>
+      <form id="loginForm">
+        <div class="mb-4">
+          <input type="email" placeholder="Email" class="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500" required>
+        </div>
+        <div class="mb-6">
+          <input type="password" placeholder="Password" class="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500" required>
+        </div>
+        <button type="submit" class="w-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold py-3 rounded-lg hover:scale-105 transition-transform duration-300">
+          Login
+        </button>
+      </form>
+      <button onclick="closeLoginModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Signup Modal -->
+  <div id="signupModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+    <div class="glass-card p-8 rounded-lg w-full max-w-md mx-4">
+      <h2 class="text-2xl font-bold text-white mb-6 text-center">Sign Up</h2>
+      <form id="signupForm">
+        <div class="mb-4">
+          <input type="text" placeholder="Full Name" class="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500" required>
+        </div>
+        <div class="mb-4">
+          <input type="email" placeholder="Email" class="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500" required>
+        </div>
+        <div class="mb-6">
+          <input type="password" placeholder="Password" class="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500" required>
+        </div>
+        <button type="submit" class="w-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold py-3 rounded-lg hover:scale-105 transition-transform duration-300">
+          Sign Up
+        </button>
+      </form>
+      <button onclick="closeSignupModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // Modal functions
+    function openLoginModal() {
+      document.getElementById('loginModal').classList.remove('hidden');
+    }
+
+    function closeLoginModal() {
+      document.getElementById('loginModal').classList.add('hidden');
+    }
+
+    function openSignupModal() {
+      document.getElementById('signupModal').classList.remove('hidden');
+    }
+
+    function closeSignupModal() {
+      document.getElementById('signupModal').classList.add('hidden');
+    }
+
+    // Form submissions
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Login successful! (This is a demo)');
+      closeLoginModal();
+    });
+
+    document.getElementById('signupForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Account created successfully! (This is a demo)');
+      closeSignupModal();
+    });
+  </script>
+</body>
+
+</html>

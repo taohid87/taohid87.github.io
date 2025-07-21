@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InfiniteSecurity - Your Partner in Cyber Defense</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide-react@latest/dist/lucide-react.js"></script>
+
+  <style>
+    /* Custom styles to apply the Inter font */
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0A101E;
+      color: #E0E0E0;
+    }
+
+    /* Gradient text for special headings */
+    .gradient-text {
+      background: linear-gradient(90deg, #00C9FF, #92FE9D);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Glassmorphism effect for cards */
+    .glass-card {
+      background: rgba(20, 28, 48, 0.6);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .hero-bg {
+      background-image:
+        radial-gradient(circle at top right, rgba(0, 201, 255, 0.1), transparent 40%),
+        radial-gradient(circle at bottom left, rgba(146, 254, 157, 0.1), transparent 40%);
+    }
+
+    /* Animated background grid */
+    .cyber-grid {
+      background-image:
+        linear-gradient(rgba(0, 201, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 201, 255, 0.03) 1px, transparent 1px);
+      background-size: 50px 50px;
+      animation: grid-move 20s linear infinite;
+    }
+
+    @keyframes grid-move {
+      0% {
+        background-position: 0 0;
+      }
+
+      100% {
+        background-position: 50px 50px;
+      }
+    }
+
+    /* Floating particles effect */
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.1;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0px) rotate(0deg);
+      }
+
+      50% {
+        transform: translateY(-20px) rotate(180deg);
+      }
+    }
+
+    /* Pulse animation for security icons */
+    .pulse-glow {
+      animation: pulse-glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes pulse-glow {
+      from {
+        box-shadow: 0 0 20px rgba(0, 201, 255, 0.3);
+      }
+
+      to {
+        box-shadow: 0 0 30px rgba(0, 201, 255, 0.6);
+      }
+    }
+
+    /* Hover effects */
+    .hover-lift {
+      transition: all 0.3s ease;
+    }
+
+    .hover-lift:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Progress bar animation */
+    .progress-bar {
+      background: linear-gradient(90deg, #00C9FF, #92FE9D);
+      height: 4px;
+      border-radius: 2px;
+      animation: progress-fill 3s ease-out;
+    }
+
+    @keyframes progress-fill {
+      from {
+        width: 0%;
+      }
+
+      to {
+        width: 100%;
+      }
+    }
+
+    /* Typing animation for hero subtitle */
+    .typing-animation {
+      overflow: hidden;
+      border-right: 2px solid #00C9FF;
+      white-space: nowrap;
+      animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+
+      to {
+        width: 100%;
+      }
+    }
+
+    @keyframes blink-caret {
+
+      from,
+      to {
+        border-color: transparent;
+      }
+
+      50% {
+        border-color: #00C9FF;
+      }
+    }
+
+    /* Security level indicator */
+    .security-meter {
+      background: linear-gradient(90deg, #ff4444 0%, #ffaa00 50%, #44ff44 100%);
+      height: 8px;
+      border-radius: 4px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .security-meter::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%);
+      animation: shimmer 2s infinite;
+    }
+
+    @keyframes shimmer {
+      0% {
+        transform: translateX(-100%);
+      }
+
+      100% {
+        transform: translateX(100%);
+      }
+    }
+  </style>
+</head>
+
+<body class="antialiased cyber-grid">
+
+  <!-- Floating particles -->
+  <div class="fixed inset-0 pointer-events-none overflow-hidden">
+    <div class="particle w-2 h-2 bg-cyan-400" style="top: 20%; left: 10%; animation-delay: 0s;"></div>
+    <div class="particle w-3 h-3 bg-green-400" style="top: 60%; left: 80%; animation-delay: 2s;"></div>
+    <div class="particle w-1 h-1 bg-purple-400" style="top: 40%; left: 20%; animation-delay: 4s;"></div>
+    <div class="particle w-2 h-2 bg-yellow-400" style="top: 80%; left: 60%; animation-delay: 1s;"></div>
+    <div class="particle w-1 h-1 bg-pink-400" style="top: 10%; left: 70%; animation-delay: 3s;"></div>
+  </div>
+
+  <!-- Header / Navigation Bar -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-gray-800">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo -->
+        <div class="flex-shrink-0">
+          <a href="#" class="text-2xl font-bold gradient-text flex items-center gap-2">
+            <div
+              class="w-8 h-8 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center pulse-glow">
+              <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd"
+                  d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            InfiniteSecurity
+          </a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex md:space-x-8">
+          <a href="courses.html" class="text-gray-300 hover:text-white transition-colors duration-200 relative group">
+            Courses
+            <span
+              class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-500 to-blue-500 group-hover:w-full transition-all duration-300"></span>
+          </a>
+          <a href="resources.html" class="text-gray-300 hover:text-white transition-colors duration-200 relative group">
+            Resources
+            <span
+              class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-500 to-blue-500 group-hover:w-full transition-all duration-300"></span>
+          </a>
+          <a href="about.html" class="text-gray-300 hover:text-white transition-colors duration-200 relative group">
+            About Us
+            <span
+              class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-500 to-blue-500 group-hover:w-full transition-all duration-300"></span>
+          </a>
+          <a href="blog.html" class="text-gray-300 hover:text-white transition-colors duration-200 relative group">
+            Blog
+            <span
+              class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-500 to-blue-500 group-hover:w-full transition-all duration-300"></span>
+          </a>
+          <a href="contact.html" class="text-gray-300 hover:text-white transition-colors duration-200 relative group">
+            Contact
+            <span
+              class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-500 to-blue-500 group-hover:w-full transition-all duration-300"></span>
+          </a>
+        </nav>
+
+        <!-- Auth Buttons -->
+        <div class="hidden md:flex items-center space-x-4">
+          <a href="login.html" class="text-gray-300 hover:text-white transition-colors">Log In</a>
+          <a href="register.html"
+            class="bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold py-2 px-6 rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300">
+            Start for Free
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden">
+          <button id="mobile-menu-button" class="text-gray-300 hover:text-white focus:outline-none">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-slate-900/95">
+      <nav class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a href="courses.html"
+          class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Courses</a>
+        <a href="resources.html"
+          class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Resources</a>
+        <a href="about.html"
+          class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">About
+          Us</a>
+        <a href="blog.html"
+          class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Blog</a>
+        <a href="contact.html"
+          class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Contact</a>
+        <div class="border-t border-gray-700 mt-4 pt-4">
+          <a href="login.html"
+            class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Log
+            In</a>
+          <a href="register.html"
+            class="mt-2 block w-full text-center bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+            Start for Free
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-28 hero-bg overflow-hidden">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <!-- Security Status Banner -->
+        <div
+          class="inline-flex items-center gap-2 bg-green-500/20 border border-green-500/30 rounded-full px-4 py-2 mb-8">
+          <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+          <span class="text-green-400 text-sm font-semibold">System Security: Active</span>
+        </div>
+
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white">
+          Your Trusted Partner in <span class="gradient-text">Cyber Defense</span>
+        </h1>
+        <div class="mt-6 max-w-3xl mx-auto">
+          <p class="text-lg md:text-xl text-gray-300 typing-animation">
+            Protect yourself and your organization from evolving digital threats
+          </p>
+        </div>
+
+        <!-- Security Level Meter -->
+        <div class="mt-8 max-w-md mx-auto">
+          <div class="flex justify-between text-sm text-gray-400 mb-2">
+            <span>Security Level</span>
+            <span>95% Protected</span>
+          </div>
+          <div class="security-meter">
+            <div class="progress-bar" style="width: 95%;"></div>
+          </div>
+        </div>
+
+        <div class="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
+          <a href="#courses"
+            class="w-full sm:w-auto bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:scale-105 transform transition-all duration-300 flex items-center gap-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C20.168 18.477 18.582 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
+              </path>
+            </svg>
+            Browse Courses
+          </a>
+          <a href="#"
+            class="w-full sm:w-auto bg-gray-700 bg-opacity-50 text-white font-semibold py-3 px-8 rounded-full hover:bg-gray-600 transition-colors duration-300 border border-gray-600 flex items-center gap-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+              </path>
+            </svg>
+            Business Solutions
+          </a>
+        </div>
+
+        <!-- Live Threat Counter -->
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+          <div class="glass-card p-4 rounded-lg">
+            <div class="text-2xl font-bold text-red-400" id="threats-blocked">1,234,567</div>
+            <div class="text-sm text-gray-400">Threats Blocked Today</div>
+          </div>
+          <div class="glass-card p-4 rounded-lg">
+            <div class="text-2xl font-bold text-green-400" id="users-protected">50,000+</div>
+            <div class="text-sm text-gray-400">Users Protected</div>
+          </div>
+          <div class="glass-card p-4 rounded-lg">
+            <div class="text-2xl font-bold text-blue-400">99.9%</div>
+            <div class="text-sm text-gray-400">Uptime Guarantee</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trusted By Section -->
+    <section class="py-12">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <p class="text-center text-gray-400 text-sm font-semibold uppercase tracking-wider">Trusted by the world's
+          leading organizations</p>
+        <div class="mt-8 flex justify-center items-center flex-wrap gap-x-10 gap-y-6 md:gap-x-16 text-gray-500">
+          <div class="flex items-center gap-2 opacity-70 hover:opacity-100 transition-opacity hover-lift">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-shield-check">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              <path d="m9 12 2 2 4-4" />
+            </svg>
+            <span class="font-semibold text-lg">SecureCorp</span>
+          </div>
+          <div class="flex items-center gap-2 opacity-70 hover:opacity-100 transition-opacity hover-lift">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-globe">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="2" x2="22" y1="12" y2="12" />
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+            </svg>
+            <span class="font-semibold text-lg">Innovate Global</span>
+          </div>
+          <div class="flex items-center gap-2 opacity-70 hover:opacity-100 transition-opacity hover-lift">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-codesandbox">
+              <path
+                d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+              <polyline points="7.5 4.21 12 6.81 16.5 4.21" />
+              <polyline points="7.5 19.79 7.5 14.6 3 12" />
+              <polyline points="16.5 19.79 16.5 14.6 21 12" />
+              <polyline points="12 22.08 12 12" />
+              <line x1="12" x2="3" y1="12" y2="12" />
+              <line x1="12" x2="21" y1="12" y2="12" />
+            </svg>
+            <span class="font-semibold text-lg">TechFrontier</span>
+          </div>
+          <div class="flex items-center gap-2 opacity-70 hover:opacity-100 transition-opacity hover-lift">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-database">
+              <ellipse cx="12" cy="5" rx="9" ry="3" />
+              <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+              <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+            </svg>
+            <span class="font-semibold text-lg">DataSafe</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-white">Our Expert Services</h2>
+          <p class="mt-4 text-lg text-gray-400">We are ready to ensure the security of your organization.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Service Card 1 -->
+          <div class="glass-card p-8 rounded-xl text-center hover-lift">
+            <div
+              class="flex items-center justify-center h-16 w-16 rounded-full bg-cyan-500 bg-opacity-20 mx-auto mb-6 pulse-glow">
+              <svg class="h-8 w-8 text-cyan-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Cyber Security Training</h3>
+            <p class="text-gray-400 mb-4">World-class training courses for beginners and professionals.</p>
+            <div class="w-full bg-gray-700 rounded-full h-2">
+              <div class="bg-cyan-400 h-2 rounded-full" style="width: 90%"></div>
+            </div>
+            <p class="text-xs text-cyan-400 mt-2">90% Completion Rate</p>
+          </div>
+          <!-- Service Card 2 -->
+          <div class="glass-card p-8 rounded-xl text-center hover-lift">
+            <div
+              class="flex items-center justify-center h-16 w-16 rounded-full bg-green-500 bg-opacity-20 mx-auto mb-6 pulse-glow">
+              <svg class="h-8 w-8 text-green-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Penetration Testing</h3>
+            <p class="text-gray-400 mb-4">Identify and fix vulnerabilities in your systems before attackers do.</p>
+            <div class="w-full bg-gray-700 rounded-full h-2">
+              <div class="bg-green-400 h-2 rounded-full" style="width: 95%"></div>
+            </div>
+            <p class="text-xs text-green-400 mt-2">95% Vulnerability Detection</p>
+          </div>
+          <!-- Service Card 3 -->
+          <div class="glass-card p-8 rounded-xl text-center hover-lift">
+            <div
+              class="flex items-center justify-center h-16 w-16 rounded-full bg-purple-500 bg-opacity-20 mx-auto mb-6 pulse-glow">
+              <svg class="h-8 w-8 text-purple-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M8 16l2.879-2.879a3 3 0 014.242 0L20 18M5 12h.01M19 12h.01M12 12h.01M12 8h.01M12 16h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Digital Forensics</h3>
+            <p class="text-gray-400 mb-4">Cybercrime investigation and data recovery services.</p>
+            <div class="w-full bg-gray-700 rounded-full h-2">
+              <div class="bg-purple-400 h-2 rounded-full" style="width: 85%"></div>
+            </div>
+            <p class="text-xs text-purple-400 mt-2">85% Recovery Success</p>
+          </div>
+          <!-- Service Card 4 -->
+          <div class="glass-card p-8 rounded-xl text-center hover-lift">
+            <div
+              class="flex items-center justify-center h-16 w-16 rounded-full bg-yellow-500 bg-opacity-20 mx-auto mb-6 pulse-glow">
+              <svg class="h-8 w-8 text-yellow-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h2.586a1 1 0 01.707.293l2.414 2.414a1 1 0 00.707.293H17z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Security Consulting</h3>
+            <p class="text-gray-400 mb-4">Customized security strategies and roadmaps for your business.</p>
+            <div class="w-full bg-gray-700 rounded-full h-2">
+              <div class="bg-yellow-400 h-2 rounded-full" style="width: 88%"></div>
+            </div>
+            <p class="text-xs text-yellow-400 mt-2">88% Implementation Success</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Real-time Security Dashboard -->
+    <section class="py-20 bg-gray-900 bg-opacity-40">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-white">Live Security Dashboard</h2>
+          <p class="mt-4 text-lg text-gray-400">Real-time monitoring of global cyber threats</p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div class="glass-card p-6 rounded-lg hover-lift">
+            <h3 class="text-4xl md:text-5xl font-extrabold gradient-text" id="students-count">10,247</h3>
+            <p class="mt-2 text-lg text-gray-400">Students Enrolled</p>
+            <div class="mt-2 text-green-400 text-sm">↗ +5.2% this week</div>
+          </div>
+          <div class="glass-card p-6 rounded-lg hover-lift">
+            <h3 class="text-4xl md:text-5xl font-extrabold gradient-text">50+</h3>
+            <p class="mt-2 text-lg text-gray-400">Expert-Led Courses</p>
+            <div class="mt-2 text-blue-400 text-sm">📚 New course added</div>
+          </div>
+          <div class="glass-card p-6 rounded-lg hover-lift">
+            <h3 class="text-4xl md:text-5xl font-extrabold gradient-text">95%</h3>
+            <p class="mt-2 text-lg text-gray-400">Success Rate</p>
+            <div class="mt-2 text-purple-400 text-sm">🏆 Industry leading</div>
+          </div>
+          <div class="glass-card p-6 rounded-lg hover-lift">
+            <h3 class="text-4xl md:text-5xl font-extrabold gradient-text" id="certified-count">2,156</h3>
+            <p class="mt-2 text-lg text-gray-400">Certified Professionals</p>
+            <div class="mt-2 text-cyan-400 text-sm">🎓 +12 this week</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Popular Courses Section -->
+    <section id="courses" class="py-20">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-white">Our Popular Courses</h2>
+          <p class="mt-4 text-lg text-gray-400">Upskill yourself and advance your career in cyber security.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Course Card -->
+          <div class="glass-card rounded-lg overflow-hidden group hover-lift">
+            <div class="relative">
+              <img src="https://placehold.co/600x400/0A101E/FFFFFF?text=Ethical+Hacking" alt="Ethical Hacking Course"
+                class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+              <div class="absolute top-4 left-4 bg-cyan-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                Beginner
+              </div>
+              <div class="absolute top-4 right-4 bg-black/50 text-white px-2 py-1 rounded text-xs">
+                ⭐ 4.9
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-white mt-2">Certified Ethical Hacker (CEH)</h3>
+              <p class="text-gray-400 mt-2">Enter the world of ethical hacking and become a security expert.</p>
+              <div class="mt-4 flex items-center gap-2 text-sm text-gray-500">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
+                  <path fill-rule="evenodd"
+                    d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                1,234 students • 20 hours
+              </div>
+              <div class="mt-4 flex justify-between items-center">
+                <span class="text-lg font-bold gradient-text">$100</span>
+                <a href="#" class="text-cyan-400 hover:text-cyan-300 font-semibold flex items-center gap-1">
+                  Learn More
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3">
+                    </path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Course Card -->
+          <div class="glass-card rounded-lg overflow-hidden group hover-lift">
+            <div class="relative">
+              <img src="https://placehold.co/600x400/0A101E/FFFFFF?text=Network+Security" alt="Network Security Course"
+                class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+              <div class="absolute top-4 left-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                Intermediate
+              </div>
+              <div class="absolute top-4 right-4 bg-black/50 text-white px-2 py-1 rounded text-xs">
+                ⭐ 4.8
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-white mt-2">Advanced Network Security</h3>
+              <p class="text-gray-400 mt-2">Learn firewalls, VPNs, and IDS/IPS to secure enterprise networks.</p>
+              <div class="mt-4 flex items-center gap-2 text-sm text-gray-500">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
+                  <path fill-rule="evenodd"
+                    d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                892 students • 30 hours
+              </div>
+              <div class="mt-4 flex justify-between items-center">
+                <span class="text-lg font-bold gradient-text">$150</span>
+                <a href="#" class="text-green-400 hover:text-green-300 font-semibold flex items-center gap-1">
+                  Learn More
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3">
+                    </path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Course Card -->
+          <div class="glass-card rounded-lg overflow-hidden group hover-lift">
+            <div class="relative">
+              <img src="https://placehold.co/600x400/0A101E/FFFFFF?text=Cloud+Security" alt="Cloud Security Course"
+                class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+              <div class="absolute top-4 left-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                Advanced
+              </div>
+              <div class="absolute top-4 right-4 bg-black/50 text-white px-2 py-1 rounded text-xs">
+                ⭐ 4.9
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-white mt-2">Cloud Security Professional</h3>
+              <p class="text-gray-400 mt-2">Secure cloud platforms like AWS, Azure, and GCP from threats.</p>
+              <div class="mt-4 flex items-center gap-2 text-sm text-gray-500">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
+                  <path fill-rule="evenodd"
+                    d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                567 students • 40 hours
+              </div>
+              <div class="mt-4 flex justify-between items-center">
+                <span class="text-lg font-bold gradient-text">$200</span>
+                <a href="#" class="text-purple-400 hover:text-purple-300 font-semibold flex items-center gap-1">
+                  Learn More
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3">
+                    </path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-20 bg-gray-900 bg-opacity-40">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-white">Meet Our Expert Team</h2>
+          <p class="mt-4 text-lg text-gray-400">The brilliant minds behind our success.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="glass-card p-8 rounded-lg text-center hover-lift">
+            <div class="relative inline-block">
+              <img class="h-24 w-24 rounded-full object-cover mx-auto border-4 border-cyan-500/30"
+                src="https://placehold.co/100x100/cyan/000000?text=JD" alt="Team Member Photo">
+              <div class="absolute -bottom-2 -right-2 bg-green-500 w-6 h-6 rounded-full border-2 border-gray-900"></div>
+            </div>
+            <p class="font-bold text-white text-xl mt-4">John Doe</p>
+            <p class="text-sm text-cyan-400 font-semibold">Lead Security Researcher</p>
+            <div class="flex justify-center gap-1 mt-2">
+              <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
+            </div>
+            <p class="text-gray-300 mt-4">"Our mission is to stay one step ahead of cyber threats through constant
+              innovation and research. We empower our clients with knowledge."</p>
+          </div>
+          <div class="glass-card p-8 rounded-lg text-center hover-lift">
+            <div class="relative inline-block">
+              <img class="h-24 w-24 rounded-full object-cover mx-auto border-4 border-green-500/30"
+                src="https://placehold.co/100x100/lime/000000?text=JS" alt="Team Member Photo">
+              <div class="absolute -bottom-2 -right-2 bg-green-500 w-6 h-6 rounded-full border-2 border-gray-900"></div>
+            </div>
+            <p class="font-bold text-white text-xl mt-4">Jane Smith</p>
+            <p class="text-sm text-green-400 font-semibold">Principal Penetration Tester</p>
+            <div class="flex justify-center gap-1 mt-2">
+              <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
+            </div>
+            <p class="text-gray-300 mt-4">"We simulate real-world attacks to find and fortify the weakest links in your
+              defense, ensuring your digital assets remain secure."</p>
+          </div>
+          <div class="glass-card p-8 rounded-lg text-center hover-lift">
+            <div class="relative inline-block">
+              <img class="h-24 w-24 rounded-full object-cover mx-auto border-4 border-purple-500/30"
+                src="https://placehold.co/100x100/fuchsia/000000?text=AK" alt="Team Member Photo">
+              <div class="absolute -bottom-2 -right-2 bg-green-500 w-6 h-6 rounded-full border-2 border-gray-900"></div>
+            </div>
+            <p class="font-bold text-white text-xl mt-4">Alex Kwon</p>
+            <p class="text-sm text-purple-400 font-semibold">Head of Digital Forensics</p>
+            <div class="flex justify-center gap-1 mt-2">
+              <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
+            </div>
+            <p class="text-gray-300 mt-4">"In the event of a breach, we meticulously uncover the truth. Our forensic
+              analysis provides clarity and a path to recovery."</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Signup Section -->
+    <section class="py-20">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="glass-card rounded-2xl p-8 md:p-12 text-center">
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Stay Ahead of Cyber Threats</h2>
+          <p class="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
+            Get the latest security insights, threat intelligence, and industry updates delivered to your inbox.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+            <input type="email" placeholder="Enter your email"
+              class="flex-1 px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500">
+            <button
+              class="bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold py-3 px-6 rounded-lg hover:scale-105 transition-transform duration-300">
+              Subscribe
+            </button>
+          </div>
+          <p class="text-sm text-gray-500 mt-4">No spam. Unsubscribe at any time.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 bg-opacity-60 border-t border-gray-800">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-8">
+        <!-- About -->
+        <div class="col-span-2 md:col-span-2">
+          <h3 class="text-xl font-bold gradient-text flex items-center gap-2">
+            <div class="w-6 h-6 bg-gradient-to-r from-cyan-500 to-blue-500 rounded pulse-glow"></div>
+            InfiniteSecurity
+          </h3>
+          <p class="mt-4 text-gray-400 max-w-xs">Your trusted platform for mastering cyber security and defending the
+            digital world.</p>
+          <div class="mt-4 flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+              <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path fill-rule="evenodd"
+                  d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                  clip-rule="evenodd" />
+              </svg>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+              <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+              </svg>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+              <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path fill-rule="evenodd"
+                  d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.206v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.512-1.387 2.688 0 3.185 1.77 3.185 4.079v4.724zM6.935 7.563a1.548 1.548 0 11-3.098 0 1.548 1.548 0 013.098 0zM8.468 16.338H5.396v-8.59h3.072v8.59zM22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 5.523 4.477 10 10 10s10-4.477 10-10z"
+                  clip-rule="evenodd" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <!-- Links -->
+        <div>
+          <h4 class="text-lg font-semibold text-white">Links</h4>
+          <ul class="mt-4 space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+            <li><a href="#courses" class="text-gray-400 hover:text-white transition-colors">Courses</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
+        <!-- Legal -->
+        <div>
+          <h4 class="text-lg font-semibold text-white">Legal</h4>
+          <ul class="mt-4 space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Security</a></li>
+          </ul>
+        </div>
+        <!-- Contact -->
+        <div>
+          <h4 class="text-lg font-semibold text-white">Contact</h4>
+          <ul class="mt-4 space-y-2 text-gray-400 text-sm">
+            <li>support@infinitesecurity.com</li>
+            <li>+1 (555) 123-4567</li>
+            <li>24/7 Security Hotline</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-8 border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-500">&copy; 2024 InfiniteSecurity. All Rights Reserved.</p>
+        <div class="mt-4 md:mt-0 flex items-center gap-4 text-sm text-gray-500">
+          <span class="flex items-center gap-1">
+            <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+            All systems operational
+          </span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // JavaScript for mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Animated counters
+    function animateCounter(element, target, duration = 2000) {
+      let start = 0;
+      const increment = target / (duration / 16);
+
+      function updateCounter() {
+        start += increment;
+        if (start < target) {
+          element.textContent = Math.floor(start).toLocaleString();
+          requestAnimationFrame(updateCounter);
+        } else {
+          element.textContent = target.toLocaleString();
+        }
+      }
+      updateCounter();
+    }
+
+    // Start counter animations when page loads
+    window.addEventListener('load', () => {
+      const threatsBlocked = document.getElementById('threats-blocked');
+      const studentsCount = document.getElementById('students-count');
+      const certifiedCount = document.getElementById('certified-count');
+
+      if (threatsBlocked) animateCounter(threatsBlocked, 1234567);
+      if (studentsCount) animateCounter(studentsCount, 10247);
+      if (certifiedCount) animateCounter(certifiedCount, 2156);
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>

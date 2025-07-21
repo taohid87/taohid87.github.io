@@ -1,0 +1,374 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog - InfiniteSecurity</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0A101E;
+      color: #E0E0E0;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #00C9FF, #92FE9D);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .glass-card {
+      background: rgba(20, 28, 48, 0.6);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .hover-lift {
+      transition: all 0.3s ease;
+    }
+
+    .hover-lift:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .pulse-glow {
+      animation: pulse-glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes pulse-glow {
+      from {
+        box-shadow: 0 0 20px rgba(0, 201, 255, 0.3);
+      }
+      to {
+        box-shadow: 0 0 30px rgba(0, 201, 255, 0.6);
+      }
+    }
+  </style>
+</head>
+
+<body class="antialiased">
+  <!-- Header / Navigation Bar -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-gray-800">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo -->
+        <div class="flex-shrink-0">
+          <a href="index.html" class="text-2xl font-bold gradient-text flex items-center gap-2">
+            <div class="w-8 h-8 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center pulse-glow">
+              <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            InfiniteSecurity
+          </a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex md:space-x-8">
+          <a href="courses.html" class="text-gray-300 hover:text-white transition-colors">Courses</a>
+          <a href="resources.html" class="text-gray-300 hover:text-white transition-colors">Resources</a>
+          <a href="about.html" class="text-gray-300 hover:text-white transition-colors">About Us</a>
+          <a href="blog.html" class="text-white font-semibold">Blog</a>
+          <a href="contact.html" class="text-gray-300 hover:text-white transition-colors">Contact</a>
+        </nav>
+
+        <!-- Auth Buttons -->
+        <div class="hidden md:flex items-center space-x-4">
+          <a href="login.html" class="text-gray-300 hover:text-white transition-colors">Log In</a>
+          <a href="register.html" class="bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold py-2 px-6 rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300">
+            Sign Up
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden">
+          <button id="mobile-menu-button" class="text-gray-300 hover:text-white focus:outline-none">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-slate-900/95">
+      <nav class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a href="courses.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Courses</a>
+        <a href="resources.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Resources</a>
+        <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">About Us</a>
+        <a href="blog.html" class="block px-3 py-2 rounded-md text-base font-medium text-white font-semibold">Blog</a>
+        <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Contact</a>
+        <div class="border-t border-gray-700 mt-4 pt-4">
+          <a href="login.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Log In</a>
+          <a href="register.html" class="mt-2 block w-full text-center bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+            Sign Up
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="pt-20">
+    <!-- Hero Section -->
+    <section class="py-20 bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6">
+          Cybersecurity <span class="gradient-text">Insights</span>
+        </h1>
+        <p class="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+          Stay informed with the latest cybersecurity trends, threats, and protection strategies from our expert team.
+        </p>
+      </div>
+    </section>
+
+    <!-- Featured Article -->
+    <section class="py-16">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="glass-card rounded-2xl overflow-hidden hover-lift">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-0">
+            <div class="relative">
+              <img src="https://placehold.co/600x400/0A101E/FFFFFF?text=Featured+Article" alt="Featured Article" class="w-full h-64 lg:h-full object-cover">
+              <div class="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                Featured
+              </div>
+            </div>
+            <div class="p-8">
+              <div class="flex items-center gap-4 mb-4">
+                <span class="text-cyan-400 text-sm font-semibold">CYBERSECURITY</span>
+                <span class="text-gray-500 text-sm">December 15, 2024</span>
+              </div>
+              <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
+                The Rise of AI-Powered Cyber Attacks: What You Need to Know
+              </h2>
+              <p class="text-gray-400 mb-6">
+                Artificial intelligence is transforming the cybersecurity landscape. Learn how attackers are leveraging AI for sophisticated attacks and how organizations can defend themselves.
+              </p>
+              <a href="#" class="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 font-semibold">
+                Read Full Article
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Posts Grid -->
+    <section class="py-16">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Blog Post 1 -->
+          <article class="glass-card rounded-xl overflow-hidden hover-lift">
+            <div class="relative">
+              <img src="https://placehold.co/400x250/0A101E/FFFFFF?text=Zero+Trust" alt="Zero Trust Security" class="w-full h-48 object-cover">
+              <div class="absolute top-4 left-4 bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                Security
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-blue-400 text-sm">Dec 12, 2024</span>
+                <span class="text-gray-500">•</span>
+                <span class="text-gray-500 text-sm">5 min read</span>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-3">Implementing Zero Trust Architecture in Modern Organizations</h3>
+              <p class="text-gray-400 mb-4 text-sm">A comprehensive guide to transitioning from traditional perimeter security to a zero trust model...</p>
+              <a href="#" class="text-blue-400 hover:text-blue-300 font-semibold text-sm">Read More →</a>
+            </div>
+          </article>
+
+          <!-- Blog Post 2 -->
+          <article class="glass-card rounded-xl overflow-hidden hover-lift">
+            <div class="relative">
+              <img src="https://placehold.co/400x250/0A101E/FFFFFF?text=Ransomware" alt="Ransomware Protection" class="w-full h-48 object-cover">
+              <div class="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                Threats
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-red-400 text-sm">Dec 10, 2024</span>
+                <span class="text-gray-500">•</span>
+                <span class="text-gray-500 text-sm">7 min read</span>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-3">Ransomware Prevention: Best Practices for 2024</h3>
+              <p class="text-gray-400 mb-4 text-sm">Learn the latest strategies to protect your organization from ransomware attacks and minimize damage...</p>
+              <a href="#" class="text-red-400 hover:text-red-300 font-semibold text-sm">Read More →</a>
+            </div>
+          </article>
+
+          <!-- Blog Post 3 -->
+          <article class="glass-card rounded-xl overflow-hidden hover-lift">
+            <div class="relative">
+              <img src="https://placehold.co/400x250/0A101E/FFFFFF?text=Cloud+Security" alt="Cloud Security" class="w-full h-48 object-cover">
+              <div class="absolute top-4 left-4 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                Cloud
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-green-400 text-sm">Dec 8, 2024</span>
+                <span class="text-gray-500">•</span>
+                <span class="text-gray-500 text-sm">6 min read</span>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-3">Securing Multi-Cloud Environments: A Practical Approach</h3>
+              <p class="text-gray-400 mb-4 text-sm">Discover strategies for maintaining security across multiple cloud platforms and services...</p>
+              <a href="#" class="text-green-400 hover:text-green-300 font-semibold text-sm">Read More →</a>
+            </div>
+          </article>
+
+          <!-- Blog Post 4 -->
+          <article class="glass-card rounded-xl overflow-hidden hover-lift">
+            <div class="relative">
+              <img src="https://placehold.co/400x250/0A101E/FFFFFF?text=Phishing" alt="Phishing Awareness" class="w-full h-48 object-cover">
+              <div class="absolute top-4 left-4 bg-yellow-500 text-black px-3 py-1 rounded-full text-xs font-semibold">
+                Awareness
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-yellow-400 text-sm">Dec 5, 2024</span>
+                <span class="text-gray-500">•</span>
+                <span class="text-gray-500 text-sm">4 min read</span>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-3">Identifying Advanced Phishing Techniques</h3>
+              <p class="text-gray-400 mb-4 text-sm">Stay ahead of sophisticated phishing attacks with these identification and prevention techniques...</p>
+              <a href="#" class="text-yellow-400 hover:text-yellow-300 font-semibold text-sm">Read More →</a>
+            </div>
+          </article>
+
+          <!-- Blog Post 5 -->
+          <article class="glass-card rounded-xl overflow-hidden hover-lift">
+            <div class="relative">
+              <img src="https://placehold.co/400x250/0A101E/FFFFFF?text=IoT+Security" alt="IoT Security" class="w-full h-48 object-cover">
+              <div class="absolute top-4 left-4 bg-purple-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                IoT
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-purple-400 text-sm">Dec 3, 2024</span>
+                <span class="text-gray-500">•</span>
+                <span class="text-gray-500 text-sm">5 min read</span>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-3">Securing the Internet of Things: Challenges and Solutions</h3>
+              <p class="text-gray-400 mb-4 text-sm">Explore the unique security challenges posed by IoT devices and effective mitigation strategies...</p>
+              <a href="#" class="text-purple-400 hover:text-purple-300 font-semibold text-sm">Read More →</a>
+            </div>
+          </article>
+
+          <!-- Blog Post 6 -->
+          <article class="glass-card rounded-xl overflow-hidden hover-lift">
+            <div class="relative">
+              <img src="https://placehold.co/400x250/0A101E/FFFFFF?text=Compliance" alt="Compliance" class="w-full h-48 object-cover">
+              <div class="absolute top-4 left-4 bg-cyan-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                Compliance
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="text-cyan-400 text-sm">Dec 1, 2024</span>
+                <span class="text-gray-500">•</span>
+                <span class="text-gray-500 text-sm">8 min read</span>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-3">Navigating GDPR and Cybersecurity Compliance</h3>
+              <p class="text-gray-400 mb-4 text-sm">Understanding the intersection of data protection regulations and cybersecurity requirements...</p>
+              <a href="#" class="text-cyan-400 hover:text-cyan-300 font-semibold text-sm">Read More →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-20">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="glass-card rounded-2xl p-8 md:p-12 text-center">
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Stay Updated</h2>
+          <p class="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
+            Subscribe to our newsletter for the latest cybersecurity insights and industry updates.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+            <input type="email" placeholder="Enter your email" class="flex-1 px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500">
+            <button class="bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold py-3 px-6 rounded-lg hover:scale-105 transition-transform duration-300">
+              Subscribe
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 bg-opacity-60 border-t border-gray-800">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-8">
+        <div class="col-span-2 md:col-span-2">
+          <h3 class="text-xl font-bold gradient-text flex items-center gap-2">
+            <div class="w-6 h-6 bg-gradient-to-r from-cyan-500 to-blue-500 rounded pulse-glow"></div>
+            InfiniteSecurity
+          </h3>
+          <p class="mt-4 text-gray-400 max-w-xs">Your trusted platform for mastering cyber security and defending the digital world.</p>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold text-white">Links</h4>
+          <ul class="mt-4 space-y-2">
+            <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+            <li><a href="courses.html" class="text-gray-400 hover:text-white transition-colors">Courses</a></li>
+            <li><a href="blog.html" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+            <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold text-white">Legal</h4>
+          <ul class="mt-4 space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Security</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold text-white">Contact</h4>
+          <ul class="mt-4 space-y-2 text-gray-400 text-sm">
+            <li>support@infinitesecurity.com</li>
+            <li>+1 (555) 123-4567</li>
+            <li>24/7 Security Hotline</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-8 border-t border-gray-800 pt-8 text-center">
+        <p class="text-gray-500">&copy; 2024 InfiniteSecurity. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu functionality
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (mobileMenuButton && mobileMenu) {
+      mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+  </script>
+</body>
+
+</html>
